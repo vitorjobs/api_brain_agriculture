@@ -12,6 +12,7 @@ export class Producer {
 
   @Column()
   cpf_cnpj: string;
+  isUnique: true
 
   @CreateDateColumn()
   created_at: Date;
