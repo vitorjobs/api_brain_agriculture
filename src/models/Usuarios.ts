@@ -8,7 +8,7 @@ export class Producer {
   readonly id: string;
 
   @Column()
-  name: string;
+  nome: string;
 
   @Column()
   email: string;

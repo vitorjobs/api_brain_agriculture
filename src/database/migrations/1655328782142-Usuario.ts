@@ -13,7 +13,7 @@ export class Usuario1655328782142 implements MigrationInterface {
 						isPrimary: true
 					},
 					{
-						name: "name",
+						name: "nome",
 						type: "varchar",
 					},
 					{
