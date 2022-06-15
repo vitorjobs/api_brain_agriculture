@@ -13,13 +13,12 @@ export class Endereco1655330421510 implements MigrationInterface {
 						isPrimary: true
 					},
 					{
-						name: "nome",
+						name: "cidade",
 						type: "varchar",
 					},
 					{
-						name: "cpf_cnpj",
+						name: "estado",
 						type: "varchar",
-						isUnique: true
 					},
 					{
 						name: "created_at",
