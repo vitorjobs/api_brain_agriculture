@@ -4,6 +4,7 @@ import {ControladorAutenticarUsuario} from "./controllers/ControladorAutenticarU
 
 import {ControladorCriarProdutor} from "./controllers/ControladorCriarProdutor"
 import {ControladorListarProdutor} from "./controllers/ControladorListarProdutor"
+import {ControladorAtualizarProdutor} from "./controllers/ControladorAtualizarProdutor"
 
 
 import {autenticacao} from "./middlewares/Autenticacao"
@@ -17,14 +18,16 @@ const controladorAutenticarUsuario = new ControladorAutenticarUsuario()
 
 /* Controlador - PRODUTOR */
 const controladorCriarProdutor = new ControladorCriarProdutor()
-const lontroladorListarProdutor = new ControladorListarProdutor()
+const controladorListarProdutor = new ControladorListarProdutor()
+const controladorAtualizarProdutor = new ControladorAtualizarProdutor()
 
 /* Rotas = USUÁRIOS */
 router.post("/usuario", createUserController.handle)
 router.post("/login",   controladorAutenticarUsuario.handle)
 
 /* Rotas = PRODUTOR */
-router.post("/produtor", autenticacao, controladorCriarProdutor.handle)
-router.get("/produtor", autenticacao, lontroladorListarProdutor.handle)
+router.post("/produtor",    autenticacao, controladorCriarProdutor.handle)
+router.get("/produtor",     autenticacao, controladorListarProdutor.handle)
+router.put("/produtor/:id", autenticacao, controladorAtualizarProdutor.handle)
 
 export {router}
