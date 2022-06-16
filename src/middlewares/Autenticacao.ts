@@ -7,7 +7,7 @@ interface IPayload {
   sub: string
 }   
 
-export function Autenticacao(
+export function autenticacao(
     request: Request, 
     response: Response, 
     next:NextFunction)
