@@ -13,10 +13,15 @@ class ServicoAtualizarProdutor {
 	async execute({id, nome, cpf_cnpj}: IProdutorRequest){
 	
     const repositorioProdutor = getCustomRepository(RepositorioProdutor)
+
+    if(!nome || !cpf_cnpj){
+      throw new Error("Campos obrigatórios não preenchidos")
+    }
+
     const produtor = await repositorioProdutor.findOne(id)
 
     if(!produtor){
-      return new Error("Category does not exists")
+      return new Error("Produtor não encontrado")
     }
 
     produtor.nome = nome ? nome: produtor.nome
