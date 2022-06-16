@@ -13,6 +13,7 @@ import {ControladorListarEndereco} from "./controllers/Endereco/ControladorLista
 import {ControladorDeletarEndereco} from "./controllers/Endereco/ControladorDeletarEndereco"
 
 import {ControladorCriarCultura} from "./controllers/Cultura/ControladorCriarCultura"
+import {ControladorListarCultura} from "./controllers/Cultura/ControladorListarCultura"
 
 
 
@@ -39,6 +40,7 @@ const controladorDeletarEndereco = new ControladorDeletarEndereco()
 
 /* Controlador - CULTURA */
 const controladorCriarCultura = new ControladorCriarCultura()
+const controladorListarCultura = new ControladorListarCultura()
 
 /* Rotas = USUÁRIOS */
 router.post("/usuario", createUserController.handle)
@@ -60,6 +62,7 @@ router.delete("/endereco/:id",    autenticacao, controladorDeletarEndereco.handl
 /* Rotas = CULTURA */
 
 router.post("/cultura",    autenticacao, controladorCriarCultura.handle)
+router.get("/cultura",    autenticacao, controladorListarCultura.handle)
 
 
 export {router}
