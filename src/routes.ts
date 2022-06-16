@@ -3,7 +3,7 @@ import {ControladorCriarUsuario} from "./controllers/ControladorCriarUsuario"
 
 const router = Router()
 
-// Controlador - USUÁRIOS
+/* Controlador - USUÁRIOS */
 const createUserController = new ControladorCriarUsuario()
 
 /*Rotas = USUÁRIOS */
