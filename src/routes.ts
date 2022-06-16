@@ -8,6 +8,8 @@ import {ControladorAtualizarProdutor} from "./controllers/ControladorAtualizarPr
 import {ControladorDeletarProdutor} from "./controllers/ControladorDeletarProdutor"
 
 import {ControladorCriarEndereco} from "./controllers/Endereco/ControladorCriarEndereco"
+import {ControladorAtualizarEndereco} from "./controllers/Endereco/ControladorAtualizarEndereco"
+import {ControladorListarEndereco} from "./controllers/Endereco/ControladorListarendereco"
 
 
 import {autenticacao} from "./middlewares/Autenticacao"
@@ -27,6 +29,8 @@ const controladorDeletarProdutor = new ControladorDeletarProdutor()
 
 /* Controlador - ENDEREÇO */
 const controladorCriarEndereco = new ControladorCriarEndereco()
+const controladorAtualizarEndereco = new ControladorAtualizarEndereco()
+const controladorListarEndereco = new ControladorListarEndereco()
 
 /* Rotas = USUÁRIOS */
 router.post("/usuario", createUserController.handle)
@@ -41,5 +45,7 @@ router.delete("/produtor/:id", autenticacao, controladorDeletarProdutor.handle)
 
 /* Rotas = ENDEREÇO */
 router.post("/endereco",    autenticacao, controladorCriarEndereco.handle)
+router.get("/endereco",     autenticacao, controladorListarEndereco.handle)
+router.put("/endereco/:id",    autenticacao, controladorAtualizarEndereco.handle)
 
 export {router}
