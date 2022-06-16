@@ -1,5 +1,5 @@
 import {Request, Response} from "express"
-import { ServicoCriarEndereco } from "../services/ServicoCriarEndereco"
+import { ServicoCriarEndereco } from "../../services/Endereco/ServicoCriarEndereco"
 
 class ControladorCriarEndereco {
 

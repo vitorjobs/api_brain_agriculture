@@ -7,7 +7,7 @@ import {ControladorListarProdutor} from "./controllers/ControladorListarProdutor
 import {ControladorAtualizarProdutor} from "./controllers/ControladorAtualizarProdutor"
 import {ControladorDeletarProdutor} from "./controllers/ControladorDeletarProdutor"
 
-import {ControladorCriarEndereco} from "./controllers/ControladorCriarEndereco"
+import {ControladorCriarEndereco} from "./controllers/Endereco/ControladorCriarEndereco"
 
 
 import {autenticacao} from "./middlewares/Autenticacao"

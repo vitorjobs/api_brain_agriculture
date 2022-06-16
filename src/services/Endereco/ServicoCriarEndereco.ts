@@ -1,6 +1,6 @@
 import { response } from "express"
 import { getCustomRepository } from "typeorm"
-import { RepositorioEndereco } from "../repositories/RepositorioEndereco"
+import { RepositorioEndereco } from "../../repositories/RepositorioEndereco"
 
 interface IProdutorRequest {
 	cidade: string,
