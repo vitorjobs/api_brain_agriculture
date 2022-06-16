@@ -4,7 +4,7 @@ import { Request, Response, NextFunction } from "express"
 import { getCustomRepository } from "typeorm"
 import { RepositorioUsuario } from "../repositories/RepositorioUsuario"
 
-export async function ensureAdmin(request: Request, response: Response, next:NextFunction){
+export async function usuarioAdmin(request: Request, response: Response, next:NextFunction){
   const {user_id} = request
 
   try {
