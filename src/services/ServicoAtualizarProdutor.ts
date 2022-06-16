@@ -12,43 +12,21 @@ interface IProdutorRequest {
 class ServicoAtualizarProdutor {
 	async execute({id, nome, cpf_cnpj}: IProdutorRequest){
 	
-		try {
+    const repositorioProdutor = getCustomRepository(RepositorioProdutor)
+    const produtor = await repositorioProdutor.findOne(id)
 
-      // Inicializa o repositório
-		  const repositorioProdutor = getCustomRepository(RepositorioProdutor)
+    if(!produtor){
+      return new Error("Category does not exists")
+    }
 
-      // VALIDA SE EXISTE NOME e CPF_CNPJ PREENCHIDO
-      if(!nome ||  !cpf_cnpj){
-        throw new Error("Campos obrigatórios não preenchidos")
-      }
+    produtor.nome = nome ? nome: produtor.nome
+    produtor.cpf_cnpj = cpf_cnpj ? cpf_cnpj: produtor.cpf_cnpj
 
-      // BUSCA PELO CPF_CNPJ
-      const verificarCpf_CnpjUsuario = await repositorioProdutor.findOne({
-        cpf_cnpj
-      })
+    await repositorioProdutor.save(produtor)
 
-      // VALIDA SE EXISTE O CPF_CNPJ JÁ EXISTE
-      if(verificarCpf_CnpjUsuario) {
-        throw new Error("CPF ou CNPJ já existe")
-      }
+    return produtor
 
-      // ATUALIZA O PRODUTOR PELO ID
-      const produtor = await repositorioProdutor.findOne({
-        id
-      })
-
-      produtor.nome = nome ? nome: produtor.nome
-      produtor.cpf_cnpj = cpf_cnpj ? cpf_cnpj: produtor.cpf_cnpj
-
-      // SALVA O USUÁRIO NO BANCO DE DADOS	
-      await repositorioProdutor.save(produtor)
-
-      return produtor
-			
-		} catch (error) {
-			  return error
-		}
-	}
+  }
 }
 
 export {ServicoAtualizarProdutor}
