@@ -4,6 +4,9 @@ import {ControladorAutenticarUsuario} from "./controllers/ControladorAutenticarU
 
 import {ControladorCriarProdutor} from "./controllers/ControladorCriarProdutor"
 
+import {autenticacao} from "./middlewares/Autenticacao"
+import {usuarioAdmin} from "./middlewares/ValidacaoUsuarioAdm"
+
 const router = Router()
 
 /* Controlador - USUÁRIOS */
@@ -18,6 +21,6 @@ router.post("/usuario", createUserController.handle)
 router.post("/login",   controladorAutenticarUsuario.handle)
 
 /* Rotas = PRODUTOR */
-router.post("/produtor", controladorCriarProdutor.handle)
+router.post("/produtor", autenticacao, controladorCriarProdutor.handle)
 
 export {router}
