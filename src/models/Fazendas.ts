@@ -14,6 +14,15 @@ export class Fazenda {
   nome: string;
 
   @Column()
+  a_tot_hect: number
+
+  @Column()
+  a_agric_hect: number
+
+  @Column()
+  a_vege_hect: number
+
+  @Column()
   endereco_id: string 
   @ManyToOne( () => Endereco)
   @JoinColumn({name: "endereco_id"})
@@ -31,14 +40,6 @@ export class Fazenda {
   @JoinColumn({name: "cultura_id"})
   cultura: Cultura; 
 
-  @Column()
-  a_tot_hect: string
-
-  @Column()
-  a_agric_hect: string
-
-  @Column()
-  a_vege_hect: string
 
   @CreateDateColumn()
   created_at: Date;

@@ -15,7 +15,6 @@ export class Fazenda1655331692349 implements MigrationInterface {
           {
             name: "name",
             type: "varchar",
-            isUnique: true
           },
           {
             name: "endereco_id",
@@ -31,20 +30,25 @@ export class Fazenda1655331692349 implements MigrationInterface {
           },
           {
             name: "a_tot_hect",
-            type: "varchar"
+            type: "number"
           },
           {
             name: "a_agric_hect",
-            type: "varchar"
+            type: "number"
           },
           {
             name: "a_vege_hect",
-            type: "varchar"
+            type: "number"
           },
           {
             name: "created_at",
             type: "timestamp",
             default: "now()"
+          },
+          {
+            name: "updated_at",
+						type: "timestamp",
+						default: "now()"
           }
 				],
 
