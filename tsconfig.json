@@ -1,23 +1,58 @@
 {
   "compilerOptions": {
    
-    "target": "es2021",
+    "target": "es2021", //ok
     
-    "module": "commonjs",                                
-        
+    "module": "commonjs",   //ok      
+    "strict": false,       // ok
+
+    "strictPropertyInitialization": false, //ok
+
+    "esModuleInterop": true, //ok
+
     // "baseUrl": "./src",
-    "typeRoots": [
-      "./src/@types"
-    ],
-    "esModuleInterop": true,                            
+    // "typeRoots": [
+    //   "./src/@types"
+    // ],
+                                
     
     "forceConsistentCasingInFileNames": true,           
-    "strictPropertyInitialization": false,
-    "strict": false, 
+    
+    
     "resolveJsonModule": true, 
    
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+    "allowJs": true
+  },
+  "include": ["src"]
 }
+
+
+// {
+//   "compilerOptions": {
+   
+//     "target": "es2021", //ok
+    
+//     "module": "commonjs",   //ok      
+//     "strict": false,                        
+        
+//     // "baseUrl": "./src",
+//     "typeRoots": [
+//       "./src/@types"
+//     ],
+//     "esModuleInterop": true,                            
+    
+//     "forceConsistentCasingInFileNames": true,           
+//     "strictPropertyInitialization": false,
+    
+//     "resolveJsonModule": true, 
+   
+//     "experimentalDecorators": true,
+//     "emitDecoratorMetadata": true,
+//     "skipLibCheck": true,
+//     "allowJs": true
+//   },
+//   "include": ["src"]
+// }

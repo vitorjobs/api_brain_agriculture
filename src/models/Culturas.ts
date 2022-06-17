@@ -1,4 +1,4 @@
-import { Entity, Column, CreateDateColumn, PrimaryColumn, ManyToOne, OneToMany } from "typeorm";
+import { Entity, Column, CreateDateColumn, PrimaryColumn, ManyToOne, OneToMany, ManyToMany } from "typeorm";
 import {v4 as uuid} from "uuid"
 import { Fazenda } from "./Fazendas";
 
