@@ -2,12 +2,12 @@ import { response } from "express"
 import { getCustomRepository } from "typeorm"
 import { RepositorioCultura } from "../../repositories/RepositorioCultura"
 
-interface IProdutorRequest {
+interface ICulturaRequest {
 	nome: string,
 }
 
 class ServicoCriarCultura {
-	async execute({nome}: IProdutorRequest){
+	async execute({nome}: ICulturaRequest){
 
 		const repositorioCultura = getCustomRepository(RepositorioCultura)
 		try {

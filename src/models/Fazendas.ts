@@ -1,4 +1,4 @@
-import { Entity, Column, CreateDateColumn, PrimaryColumn, ManyToOne, JoinColumn, ManyToMany} from "typeorm";
+import { Entity, Column, CreateDateColumn, PrimaryColumn, ManyToOne, JoinColumn, ManyToMany, OneToMany, JoinTable, OneToOne} from "typeorm";
 import {v4 as uuid} from "uuid"
 import { Endereco } from "./Enderecos";
 import { Produtor } from "./Produtores";
@@ -34,12 +34,14 @@ export class Fazenda {
   @JoinColumn({name: "produtor_id"})
   produtor: Produtor; 
 
-  @Column()
-  cultura_id: string
-  @ManyToMany( () => Cultura)
-  @JoinColumn({name: "cultura_id"})
-  cultura: Cultura; 
+  // @Column()
+  // cultura_id: string
+  // @ManyToOne(()=> Cultura, (cultura) => cultura.id)
+  // @JoinColumn({name: "cultura_id"})
+  // cultura: Cultura; 
 
+  @ManyToOne(type => Cultura, fazenda => Fazenda, {eager: true})
+  cultura_id: Cultura
 
   @CreateDateColumn()
   created_at: Date;

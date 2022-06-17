@@ -1,5 +1,6 @@
-import { Entity, Column, CreateDateColumn, PrimaryColumn } from "typeorm";
+import { Entity, Column, CreateDateColumn, PrimaryColumn, ManyToOne, OneToMany } from "typeorm";
 import {v4 as uuid} from "uuid"
+import { Fazenda } from "./Fazendas";
 
 @Entity("cultura")
 export class Cultura {
@@ -12,6 +13,8 @@ export class Cultura {
 
   @CreateDateColumn()
   created_at: Date;
+
+  @OneToMany(type => Fazenda, cultura => Cultura)
 
   @CreateDateColumn()
   updated_at: Date;

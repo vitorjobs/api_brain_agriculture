@@ -17,6 +17,9 @@ import {ControladorListarCultura} from "./controllers/Cultura/ControladorListarC
 import {ControladorAtualizarCultura} from "./controllers/Cultura/ControladorAtualizarCultura"
 import {ControladorDeletarCultura} from "./controllers/Cultura/ControladorDeletarCultura"
 
+import {ControladorCriarFazenda} from "./controllers/Fazenda/ControladorCriarFazenda"
+import {ControladorListarFazenda} from "./controllers/Fazenda/ControladorListarFazenda"
+
 
 
 import {autenticacao} from "./middlewares/Autenticacao"
@@ -46,6 +49,13 @@ const controladorListarCultura = new ControladorListarCultura()
 const controladorAtualizarCultura = new ControladorAtualizarCultura()
 const controladorDeletarCultura = new ControladorDeletarCultura()
 
+/* Controlador - FAZENDA */
+const controladorCriarFazenda = new ControladorCriarFazenda()
+const controladorListarFazenda = new ControladorListarFazenda()
+
+
+
+
 /* Rotas = USUÁRIOS */
 router.post("/usuario", createUserController.handle)
 router.post("/login",   controladorAutenticarUsuario.handle)
@@ -69,6 +79,11 @@ router.post("/cultura",    autenticacao, controladorCriarCultura.handle)
 router.get("/cultura",    autenticacao, controladorListarCultura.handle)
 router.put("/cultura/:id",    autenticacao, controladorAtualizarCultura.handle)
 router.delete("/cultura/:id",    autenticacao, controladorDeletarCultura.handle)
+
+
+/* Rotas = FAZENDA */
+router.post("/fazenda",    autenticacao, controladorCriarFazenda.handle)
+router.get("/fazenda",    autenticacao, controladorListarFazenda.handle)
 
 
 export {router}
