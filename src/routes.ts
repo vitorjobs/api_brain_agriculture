@@ -19,6 +19,8 @@ import {ControladorDeletarCultura} from "./controllers/Cultura/ControladorDeleta
 
 import {ControladorCriarFazenda} from "./controllers/Fazenda/ControladorCriarFazenda"
 import {ControladorListarFazenda} from "./controllers/Fazenda/ControladorListarFazenda"
+import {ControladorListarTotalFazenda} from "./controllers/Fazenda/ControladorListarTotalFazenda"
+
 
 
 
@@ -52,7 +54,7 @@ const controladorDeletarCultura = new ControladorDeletarCultura()
 /* Controlador - FAZENDA */
 const controladorCriarFazenda = new ControladorCriarFazenda()
 const controladorListarFazenda = new ControladorListarFazenda()
-
+const controladorListarTotalFazenda = new ControladorListarTotalFazenda()
 
 
 
@@ -84,6 +86,7 @@ router.delete("/cultura/:id",    autenticacao, controladorDeletarCultura.handle)
 /* Rotas = FAZENDA */
 router.post("/fazenda",    autenticacao, controladorCriarFazenda.handle)
 router.get("/fazenda",    autenticacao, controladorListarFazenda.handle)
+router.get("/totalfazenda",    autenticacao, controladorListarTotalFazenda.handle)
 
 
 export {router}
