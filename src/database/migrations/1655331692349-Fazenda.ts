@@ -13,7 +13,7 @@ export class Fazenda1655331692349 implements MigrationInterface {
             isPrimary: true
           },
           {
-            name: "name",
+            name: "nome",
             type: "varchar",
           },
           {
