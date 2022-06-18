@@ -1,3 +1,6 @@
+import {autenticacao} from "./middlewares/Autenticacao"
+import {usuarioAdmin} from "./middlewares/ValidacaoUsuarioAdm"
+
 import {Router} from "express"
 import {ControladorCriarUsuario} from "./controllers/ControladorCriarUsuario"
 import {ControladorAutenticarUsuario} from "./controllers/ControladorAutenticarUsuario"
@@ -25,12 +28,6 @@ import {ControladorListarTotalHectarFazendaEstado} from "./controllers/Fazenda/D
 import {ControladorListarTotalHectarFazendaCultivo} from "./controllers/Fazenda/Dashboard/ControladorListarTotalHectarFazendaCultivo"
 import {ControladorListarAgricTotalHectarFazenda} from "./controllers/Fazenda/Dashboard/ControladorListarAgricTotalHectarFazenda"
 import {ControladorListarVegeTotalHectarFazenda} from "./controllers/Fazenda/Dashboard/ControladorListarVegeTotalHectarFazenda"
-
-
-
-
-import {autenticacao} from "./middlewares/Autenticacao"
-import {usuarioAdmin} from "./middlewares/ValidacaoUsuarioAdm"
 
 const router = Router()
 
@@ -67,40 +64,40 @@ const controladorListarAgricTotalHectarFazenda = new ControladorListarAgricTotal
 const controladorListarVegeTotalHectarFazenda = new ControladorListarVegeTotalHectarFazenda
 
 
-/* Rotas = USUÁRIOS */
-router.post("/usuario", createUserController.handle)
-router.post("/login",   controladorAutenticarUsuario.handle)
+/* MIDDLEWARES = USUÁRIOS */
+router.post("/usuario",        usuarioAdmin, createUserController.handle)
+router.post("/login",          controladorAutenticarUsuario.handle)
 
 /* Rotas = PRODUTOR */
-router.post("/produtor",    autenticacao, controladorCriarProdutor.handle)
-router.get("/produtor",     autenticacao, controladorListarProdutor.handle)
-router.put("/produtor/:id", autenticacao, controladorAtualizarProdutor.handle)
+router.post("/produtor",       autenticacao, controladorCriarProdutor.handle)
+router.get("/produtor",        autenticacao, controladorListarProdutor.handle)
+router.put("/produtor/:id",    autenticacao, controladorAtualizarProdutor.handle)
 router.delete("/produtor/:id", autenticacao, controladorDeletarProdutor.handle)
 
 
 /* Rotas = ENDEREÇO */
-router.post("/endereco",    autenticacao, controladorCriarEndereco.handle)
-router.get("/endereco",     autenticacao, controladorListarEndereco.handle)
+router.post("/endereco",       autenticacao, controladorCriarEndereco.handle)
+router.get("/endereco",        autenticacao, controladorListarEndereco.handle)
 router.put("/endereco/:id",    autenticacao, controladorAtualizarEndereco.handle)
-router.delete("/endereco/:id",    autenticacao, controladorDeletarEndereco.handle)
+router.delete("/endereco/:id", autenticacao, controladorDeletarEndereco.handle)
 
 /* Rotas = CULTURA */
 
-router.post("/cultura",    autenticacao, controladorCriarCultura.handle)
-router.get("/cultura",    autenticacao, controladorListarCultura.handle)
-router.put("/cultura/:id",    autenticacao, controladorAtualizarCultura.handle)
-router.delete("/cultura/:id",    autenticacao, controladorDeletarCultura.handle)
+router.post("/cultura",         autenticacao, controladorCriarCultura.handle)
+router.get("/cultura",          autenticacao, controladorListarCultura.handle)
+router.put("/cultura/:id",      autenticacao, controladorAtualizarCultura.handle)
+router.delete("/cultura/:id",   autenticacao, controladorDeletarCultura.handle)
 
 
 /* Rotas = FAZENDA */
-router.post("/fazenda",    autenticacao, controladorCriarFazenda.handle)
-router.get("/fazenda",    autenticacao, controladorListarFazenda.handle)
-router.get("/totalfazenda",    autenticacao, controladorListarTotalFazenda.handle)
-router.get("/totalHectarFazenda",    autenticacao, controladorListarTotalHectarFazenda.handle)
-router.get("/totalHectarFazendaEstado",    autenticacao, controladorListarTotalHectarFazendaEstado.handle)
-router.get("/totalHectarFazendaCultura",    autenticacao, controladorListarTotalHectarFazendaCultivo.handle)
-router.get("/totalHectarFazendaCulturaAgric",    autenticacao, controladorListarAgricTotalHectarFazenda.handle)
-router.get("/totalHectarFazendaCulturaVeget",    autenticacao, controladorListarVegeTotalHectarFazenda.handle)
+router.post("/fazenda",                        autenticacao, controladorCriarFazenda.handle)
+router.get("/fazenda",                         autenticacao, controladorListarFazenda.handle)
+router.get("/totalfazenda",                    autenticacao, usuarioAdmin, controladorListarTotalFazenda.handle)
+router.get("/totalHectarFazenda",              autenticacao, usuarioAdmin, controladorListarTotalHectarFazenda.handle)
+router.get("/totalHectarFazendaEstado",        autenticacao, usuarioAdmin, controladorListarTotalHectarFazendaEstado.handle)
+router.get("/totalHectarFazendaCultura",       autenticacao, usuarioAdmin, controladorListarTotalHectarFazendaCultivo.handle)
+router.get("/totalHectarFazendaCulturaAgric",  autenticacao, usuarioAdmin, controladorListarAgricTotalHectarFazenda.handle)
+router.get("/totalHectarFazendaCulturaVeget",  autenticacao, usuarioAdmin, controladorListarVegeTotalHectarFazenda.handle)
 
 
 export {router}
