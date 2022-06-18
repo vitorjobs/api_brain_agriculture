@@ -28,31 +28,3 @@
   },
   "include": ["src"]
 }
-
-
-// {
-//   "compilerOptions": {
-   
-//     "target": "es2021", //ok
-    
-//     "module": "commonjs",   //ok      
-//     "strict": false,                        
-        
-//     // "baseUrl": "./src",
-//     "typeRoots": [
-//       "./src/@types"
-//     ],
-//     "esModuleInterop": true,                            
-    
-//     "forceConsistentCasingInFileNames": true,           
-//     "strictPropertyInitialization": false,
-    
-//     "resolveJsonModule": true, 
-   
-//     "experimentalDecorators": true,
-//     "emitDecoratorMetadata": true,
-//     "skipLibCheck": true,
-//     "allowJs": true
-//   },
-//   "include": ["src"]
-// }
