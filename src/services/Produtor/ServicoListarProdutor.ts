@@ -1,5 +1,5 @@
 import { getCustomRepository } from "typeorm"
-import { RepositorioProdutor } from "../repositories/RepositorioProdutor"
+import { RepositorioProdutor } from "../../repositories/RepositorioProdutor"
 
 // MÉTODO EXECUTE, LISTA OS DADOS DOS PRODUTORES
 class ServicoListarProdutor {

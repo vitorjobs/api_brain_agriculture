@@ -1,5 +1,5 @@
 import { getCustomRepository } from "typeorm"
-import { RepositorioProdutor } from "../repositories/RepositorioProdutor"
+import { RepositorioProdutor } from "../../repositories/RepositorioProdutor"
 
 // INTERFACE COM OS DADOS DA TABELA PRODUTOR
 interface IProdutorRequest {

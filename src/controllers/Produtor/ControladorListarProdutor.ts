@@ -1,5 +1,5 @@
 import {Request, Response} from "express"
-import { ServicoListarProdutor } from "../services/ServicoListarProdutor"
+import { ServicoListarProdutor } from "../../services/Produtor/ServicoListarProdutor"
 
 class ControladorListarProdutor {
 

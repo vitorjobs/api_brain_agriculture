@@ -1,5 +1,5 @@
 import { getCustomRepository } from "typeorm"
-import { RepositorioProdutor } from "../repositories/RepositorioProdutor"
+import { RepositorioProdutor } from "../../repositories/RepositorioProdutor"
 
 class ServicoDeletarProdutor {
 	async execute(id: string) {
