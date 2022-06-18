@@ -1,15 +1,14 @@
-import { Column, getCustomRepository } from "typeorm"
-import { Fazenda } from "../../../models/Fazendas"
+import { getCustomRepository } from "typeorm"
 import { RepositorioFazenda } from "../../../repositories/RepositorioFazenda"
 
-class ServicoListarTotalHectarFazenda {
+class ServicoListarTotalFazendaAgric {
 	async execute(){
     
 		try {
 
       const totalHectar = getCustomRepository(RepositorioFazenda)
       .createQueryBuilder("fazenda")
-      .select("SUM(a_tot_hect)", "Total_Hectares")
+      .select("SUM(a_agric_hect)", "Area_Agricultavel")
       .getRawOne()   
 
       // const totalFazendas = await repositorioFazenda.createQueryBuilder()
@@ -25,4 +24,4 @@ class ServicoListarTotalHectarFazenda {
 	}
 }
 
-export {ServicoListarTotalHectarFazenda}
+export {ServicoListarTotalFazendaAgric}
