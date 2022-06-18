@@ -1,5 +1,5 @@
 import { getCustomRepository } from "typeorm"
-import { RepositorioFazenda } from "../../repositories/RepositorioFazenda"
+import { RepositorioFazenda } from "../../../repositories/RepositorioFazenda"
 
 class ServicoListarFazenda {
 	async execute(){

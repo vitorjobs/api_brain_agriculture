@@ -22,6 +22,7 @@ import {ControladorListarFazenda} from "./controllers/Fazenda/Dashboard/Controla
 import {ControladorListarTotalFazenda} from "./controllers/Fazenda/Dashboard/ControladorListarTotalFazenda"
 import {ControladorListarTotalHectarFazenda} from "./controllers/Fazenda/Dashboard/ControladorListarTotalHectarFazenda"
 import {ControladorListarTotalHectarFazendaEstado} from "./controllers/Fazenda/Dashboard/ControladorListarTotalHectarFazendaEstado"
+import {ControladorListarTotalHectarFazendaCultivo} from "./controllers/Fazenda/Dashboard/ControladorListarTotalHectarFazendaCultivo"
 
 
 
@@ -59,6 +60,7 @@ const controladorListarFazenda = new ControladorListarFazenda()
 const controladorListarTotalFazenda = new ControladorListarTotalFazenda()
 const controladorListarTotalHectarFazenda = new ControladorListarTotalHectarFazenda()
 const controladorListarTotalHectarFazendaEstado = new ControladorListarTotalHectarFazendaEstado()
+const controladorListarTotalHectarFazendaCultivo = new ControladorListarTotalHectarFazendaCultivo()
 
 
 /* Rotas = USUÁRIOS */
@@ -92,6 +94,7 @@ router.get("/fazenda",    autenticacao, controladorListarFazenda.handle)
 router.get("/totalfazenda",    autenticacao, controladorListarTotalFazenda.handle)
 router.get("/totalHectarFazenda",    autenticacao, controladorListarTotalHectarFazenda.handle)
 router.get("/totalHectarFazendaEstado",    autenticacao, controladorListarTotalHectarFazendaEstado.handle)
+router.get("/totalHectarFazendaCultura",    autenticacao, controladorListarTotalHectarFazendaCultivo.handle)
 
 
 export {router}

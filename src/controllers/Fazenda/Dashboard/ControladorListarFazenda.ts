@@ -1,5 +1,5 @@
 import {Request, Response} from "express"
-import { ServicoListarFazenda } from "../../services/Fazenda/ServicoListarFazenda"
+import { ServicoListarFazenda } from "../../../services/Fazenda/Dashboard/ServicoListarFazenda"
 
 class ControladorListarFazenda {
 
