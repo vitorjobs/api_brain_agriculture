@@ -107,7 +107,7 @@ Na lógica da aplicação, é possível realizar o cadastro de usuários com os 
 # reports
   POST: http://localhost:3000/usuario
 ```
-![POST - Cadastro de usuários administrador](../api/.github/img/UserAdmin.gif "POST - Cadastro de usuários administrador")
+![POST - Cadastro de usuários administrador](.github/img/UserAdmin.gif "POST - Cadastro de usuários administrador")
 
 
 * `Cadastro` de Usuário `Comum`
@@ -116,7 +116,7 @@ Na lógica da aplicação, é possível realizar o cadastro de usuários com os 
   POST: http://localhost:3000/usuario
   Obs: Neste caso, baste omitir o parametro "admin" ou atribuir o valor "false".
 ```
-![POST - Cadastro de usuários comuns](../api/.github/img/UserNaoAdmin.gif "POST - Cadastro de usuários comuns")
+![POST - Cadastro de usuários comuns](.github/img/UserNaoAdmin.gif "POST - Cadastro de usuários comuns")
 
 
 ## 🚧 Realizar Login e Gerar Token de Login com validação de usuário e senha
@@ -126,13 +126,13 @@ Após confirmados dados, é gerado o token para utilização nos demais `EndPoin
 # reports
   POST: http://localhost:3000/login
 ```
-![POST - Login com geração de TOKEN](../api/.github/img/LoginToken.gif "POST - Login com geração de TOKEN")
+![POST - Login com geração de TOKEN](.github/img/LoginToken.gif "POST - Login com geração de TOKEN")
 
 ## 🚧 Realizar Consultas em rotas disponíveis apenas para usuários com perfil administrador
 
 * Listar Rotas dos Gŕaficos
 
-![POST - Login com geração de TOKEN](../api/.github/img/RotasGraficos.gif "POST - Login com geração de TOKEN")
+![POST - Login com geração de TOKEN](.github/img/RotasGraficos.gif "POST - Login com geração de TOKEN")
 
 <p align="center">“Avalie com Carinho :). Eu Tentei rsrs</blockquote>
 
