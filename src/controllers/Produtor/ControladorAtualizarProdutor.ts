@@ -1,5 +1,5 @@
 import {Request, Response} from "express"
-import { ServicoAtualizarProdutor } from "../services/ServicoAtualizarProdutor"
+import { ServicoAtualizarProdutor } from "../../services/Produtor/ServicoAtualizarProdutor"
 
 class ControladorAtualizarProdutor {
 
@@ -8,20 +8,26 @@ class ControladorAtualizarProdutor {
     const {id} = request.params
     const {nome, cpf_cnpj } = request.body
     
-    const servicoAtualizarProdutor = new ServicoAtualizarProdutor()
+    try {
 
-    const produtor = await servicoAtualizarProdutor.execute({id, nome, cpf_cnpj})
+      const servicoAtualizarProdutor = new ServicoAtualizarProdutor()
 
-    if(produtor instanceof Error)  { 
-      return response.status(400).json(produtor.message)
-
+      const produtor = await servicoAtualizarProdutor.execute({id, nome, cpf_cnpj})
+  
+      if(produtor instanceof Error)  { 
+        return response.status(400).json(produtor.message)
+  
+      }
+      
+      return response.json({
+        mensagem: "Produtor Alterado Com Sucesso",
+        produtor
+      })
+    } catch (error) {
+        return response.status(400).json(error) 
     }
-    
-    return response.json({
-      mensagem: "Produtor Alterado Com Sucesso",
-      produtor
-    })
   }
 }
+
 
 export {ControladorAtualizarProdutor}

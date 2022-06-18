@@ -17,11 +17,7 @@ class ServicoCriarUsuario {
 		const repositorioUsuario = getCustomRepository(RepositorioUsuario)
 
 		try {
-			
-		} catch (error) {
-			
-		}
-		// VALIDA SE EXISTE EMAIL
+			// VALIDA SE EXISTE EMAIL
 		if(!email || !nome || !senha){
 			throw new Error("Campos obrigatórios não preenchidos")
 		}
@@ -51,6 +47,10 @@ class ServicoCriarUsuario {
 		await repositorioUsuario.save(user)
 
 		return user
+		} catch (error) {
+        return error
+		}
+		
 	}
 }
 

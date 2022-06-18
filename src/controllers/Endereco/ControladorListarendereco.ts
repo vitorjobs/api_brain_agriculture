@@ -18,10 +18,10 @@ class ControladorListarEndereco {
         "Lista de Endereços ": {
           endereco
         }
-      })
+      }).status(200)
   
     } catch (error) {
-        return error    
+        return response.status(400).json(error)
     }
   }
 }

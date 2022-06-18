@@ -20,10 +20,10 @@ class ControladorListarAgricTotalHectarFazenda{
         "TOTAL GERAL DE AREAS VEGETAL EM HECTARES ": {
           totalHectarFazendaVege
         }
-      })
+      }).status(200)
   
     } catch (error) {
-        return error    
+        return response.status(400).json(error)
     }
   }
 }

@@ -14,22 +14,27 @@ class ServicoAtualizarProdutor {
 	
     const repositorioProdutor = getCustomRepository(RepositorioProdutor)
 
-    if(!nome || !cpf_cnpj){
-      throw new Error("Campos obrigatórios não preenchidos")
+    try {
+      if(!nome || !cpf_cnpj){
+        throw new Error("Campos obrigatórios não preenchidos")
+      }
+  
+      const produtor = await repositorioProdutor.findOne(id)
+  
+      if(!produtor){
+        return new Error("Produtor não encontrado")
+      }
+  
+      produtor.nome = nome ? nome: produtor.nome
+      produtor.cpf_cnpj = cpf_cnpj ? cpf_cnpj: produtor.cpf_cnpj
+  
+      await repositorioProdutor.save(produtor)
+  
+      return produtor
+
+    } catch (error) {
+        return error
     }
-
-    const produtor = await repositorioProdutor.findOne(id)
-
-    if(!produtor){
-      return new Error("Produtor não encontrado")
-    }
-
-    produtor.nome = nome ? nome: produtor.nome
-    produtor.cpf_cnpj = cpf_cnpj ? cpf_cnpj: produtor.cpf_cnpj
-
-    await repositorioProdutor.save(produtor)
-
-    return produtor
 
   }
 }

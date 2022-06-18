@@ -18,10 +18,10 @@ class ControladorListarCultura {
         "Lista de Culturas Disponíveis para o Cultivo ": {
           cultura
         }
-      })
+      }).status(200)
   
     } catch (error) {
-        return error    
+        return response.status(400).json(error)
     }
   }
 }

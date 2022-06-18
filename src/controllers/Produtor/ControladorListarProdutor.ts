@@ -6,6 +6,7 @@ class ControladorListarProdutor {
   async handle(request: Request, response: Response){
     
     try {
+      
       const servicoListarProdutor = new ServicoListarProdutor()
       const produtor = await servicoListarProdutor.execute()
 
@@ -18,10 +19,10 @@ class ControladorListarProdutor {
         "Dados do Produtor ": {
           produtor
         }
-      })
+      }).status(200)
   
     } catch (error) {
-        return error    
+        return response.status(400).json(error) 
     }
 
 

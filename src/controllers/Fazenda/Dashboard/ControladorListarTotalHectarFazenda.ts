@@ -20,10 +20,10 @@ class ControladorListarTotalHectarFazenda {
         "TOTAL GERAL DE HECTARES DAS FAZENDAS CADASTRADASFAZENDAS cadastradas no sistema ": {
           totalHectarFazendas
         }
-      })
+      }).json(200)
   
     } catch (error) {
-        return error    
+        return response.status(400).json(error)  
     }
   }
 }

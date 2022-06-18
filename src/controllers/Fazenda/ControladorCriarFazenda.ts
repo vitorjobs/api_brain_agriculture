@@ -15,30 +15,24 @@ class ControladorCriarFazenda {
       cultura_id
      } = request.body
     
-    const servicoCriarFazenda = new ServicoCriarFazenda()
+     try {
+      const servicoCriarFazenda = new ServicoCriarFazenda()
 
-    const fazenda = await servicoCriarFazenda.execute({
-      nome, 
-      a_tot_hect,
-      a_vege_hect,
-      a_agric_hect,
-      produtor_id,
-      endereco_id,
-      cultura_id
-    })
-    console.log(
-      a_tot_hect,
-      a_agric_hect,
-      a_vege_hect,
-      produtor_id,
-      endereco_id,
-      // ultura
-    )
-    return response.json(fazenda)
-    // return response.status(201).json({
-    //   mensagem: "Fazenda Cadastrada com sucesso",
-    //   fazenda
-    // })
+      const fazenda = await servicoCriarFazenda.execute({
+        nome, 
+        a_tot_hect,
+        a_vege_hect,
+        a_agric_hect,
+        produtor_id,
+        endereco_id,
+        cultura_id
+      })
+  
+      return response.json(fazenda).status(200)
+
+     } catch (error) {
+        return response.status(400).json(error)
+     }
   }
 }
 

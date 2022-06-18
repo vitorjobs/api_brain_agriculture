@@ -1,5 +1,5 @@
 import {Request, Response} from "express"
-import { ServicoDeletarProdutor } from "../services/ServicoDeletarProdutor"
+import { ServicoDeletarProdutor } from "../../services/Produtor/ServicoDeletarProdutor"
 
 class ControladorDeletarProdutor {
 
@@ -7,19 +7,25 @@ class ControladorDeletarProdutor {
     
     const {id} = request.params
     
-    const servicoDeletarProdutor = new ServicoDeletarProdutor()
+    try {
 
-    const produtor = await servicoDeletarProdutor.execute(id)
+      const servicoDeletarProdutor = new ServicoDeletarProdutor()
 
-    if(produtor instanceof Error)  { 
-      return response.status(400).json(produtor.message)
+      const produtor = await servicoDeletarProdutor.execute(id)
+  
+      if(produtor instanceof Error)  { 
+        return response.status(400).json(produtor.message)
+  
+      }
+      
+      return response.json({
+        mensagem: "Produtor Excluído Com Sucesso",
+        produtor
+      }).status(200)
 
+    } catch (error) {
+        return response.status(400).json(error) 
     }
-		
-    return response.json({
-      mensagem: "Produtor Excluído Com Sucesso",
-      produtor
-    })
   }
 }
 

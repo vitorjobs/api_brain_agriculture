@@ -21,9 +21,10 @@ class ControladorAtualizarFazenda {
       return response.json({
         mensagem: "Endereço Alterado Com Sucesso",
         endereco
-      })
+      }).status(201)
+      
     } catch (error) {
-      return error
+        return response.status(400).json(error)
     }
   }
 }

@@ -6,6 +6,7 @@ class ControladorListarVegeTotalHectarFazenda{
   async handle(request: Request, response: Response){
     
     try {
+      
       const servicoListarTotalFazendaAgric = new ServicoListarTotalFazendaAgric()
       const totalHectarFazendasgriAgric = await servicoListarTotalFazendaAgric.execute()
 
@@ -23,7 +24,7 @@ class ControladorListarVegeTotalHectarFazenda{
       })
   
     } catch (error) {
-        return error    
+        return response.status(400).json(error)  
     }
   }
 }

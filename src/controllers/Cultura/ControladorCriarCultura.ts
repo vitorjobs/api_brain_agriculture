@@ -15,7 +15,7 @@ class ControladorCriarCultura {
       return response.status(201).json({
         mensagem: "Cultura Cadastrado com sucesso",
         nome
-      })
+      }).status(200)
 
     } catch (error) {
 

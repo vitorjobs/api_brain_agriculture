@@ -18,10 +18,10 @@ class ControladorListarTotalFazenda {
         "TOTAL de FAZENDAS cadastradas no sistema ": {
           totalFazendas
         }
-      })
+      }).status(200)
   
     } catch (error) {
-        return error    
+        return response.status(400).json(error)
     }
   }
 }

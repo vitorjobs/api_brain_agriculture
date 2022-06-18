@@ -6,14 +6,20 @@ class ControladorCriarEndereco {
   async handle(request: Request, response: Response){
     const {cidade, estado} = request.body
     
-    const servicoCriarEndereco = new ServicoCriarEndereco()
+    try {
 
-    const endereco = await servicoCriarEndereco.execute({cidade, estado})
+      const servicoCriarEndereco = new ServicoCriarEndereco()
 
-    return response.status(201).json({
-      mensagem: "Endereço Cadastrado com sucesso",
-      endereco
-    })
+      const endereco = await servicoCriarEndereco.execute({cidade, estado})
+  
+      return response.status(201).json({
+        mensagem: "Endereço Cadastrado com sucesso",
+        endereco
+      }).status(200)
+      
+    } catch (error) {
+        return response.status(400).json(error)
+    }
   }
 }
 

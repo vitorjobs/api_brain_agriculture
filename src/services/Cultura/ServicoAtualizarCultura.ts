@@ -10,6 +10,7 @@ class ServicoAtualizarCultura {
 	async execute({id, nome}: IProdutorRequest){
 	
     try {
+      
       const repositorioCultura = getCustomRepository(RepositorioCultura)
 
       if(!nome){

@@ -9,8 +9,9 @@ interface ICulturaRequest {
 class ServicoCriarCultura {
 	async execute({nome}: ICulturaRequest){
 
-		const repositorioCultura = getCustomRepository(RepositorioCultura)
 		try {
+
+      const repositorioCultura = getCustomRepository(RepositorioCultura)
 
       if(!nome){
         throw new Error("CAMPO OBRIGATÓRIO NÃO PREENCHIDO")

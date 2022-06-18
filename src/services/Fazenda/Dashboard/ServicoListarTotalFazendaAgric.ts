@@ -11,10 +11,6 @@ class ServicoListarTotalFazendaAgric {
       .select("SUM(a_agric_hect)", "Area_Agricultavel")
       .getRawOne()   
 
-      // const totalFazendas = await repositorioFazenda.createQueryBuilder()
-      // .select("SUM(a_agric_hect)" + Fazenda)
-      // .getRawOne()    
-	      
       return totalHectar
 			
 		} catch (error) {

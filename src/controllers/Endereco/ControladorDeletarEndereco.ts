@@ -6,19 +6,25 @@ class ControladorDeletarEndereco {
   async handle(request: Request, response: Response){
     
     const {id} = request.params
-    
-    const servicoDeletarEndereco = new ServicoDeletarEndereco()
+     
+    try {
+      const servicoDeletarEndereco = new ServicoDeletarEndereco()
 
-    const endereco = await servicoDeletarEndereco.execute(id)
+      const endereco = await servicoDeletarEndereco.execute(id)
+  
+      if(endereco instanceof Error)  { 
+        return response.status(400).json(endereco.message)
+      }
+      
+      return response.json({
+        mensagem: "Endereço Excluído Com Sucesso",
+        endereco
+      }).status(200)
 
-    if(endereco instanceof Error)  { 
-      return response.status(400).json(endereco.message)
+    } catch (error) {
+        return response.status(400).json(error)
     }
-		
-    return response.json({
-      mensagem: "Endereço Excluído Com Sucesso",
-      endereco
-    })
+
   }
 }
 

@@ -6,19 +6,18 @@ class ControladorCriarUsuario {
   async handle(request: Request, response: Response){
     const {nome, email, admin, senha} = request.body
     
-    const servicoCriarUsuario = new ServicoCriarUsuario()
+    try {
+      
+      const servicoCriarUsuario = new ServicoCriarUsuario()
 
-    const usuario = await servicoCriarUsuario.execute({nome, email, admin, senha})
+      const usuario = await servicoCriarUsuario.execute({nome, email, admin, senha})
+  
+      return response.json(usuario).status(200)
 
-    return response.json(usuario)
+    } catch (error) {
+        return response.status(400).json(error)       
+    }
 
-    // return response.json({
-    //   "usuario criado com Sucesso ": {
-    //     nome,
-    //     email,
-    //     admin
-    //   }
-    // })
   }
 }
 
