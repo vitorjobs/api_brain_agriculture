@@ -1,6 +1,6 @@
 import { Column, getCustomRepository } from "typeorm"
-import { Fazenda } from "../../models/Fazendas"
-import { RepositorioFazenda } from "../../repositories/RepositorioFazenda"
+import { Fazenda } from "../../../models/Fazendas"
+import { RepositorioFazenda } from "../../../repositories/RepositorioFazenda"
 
 class ServicoListarTotalHectarFazenda {
 	async execute(){

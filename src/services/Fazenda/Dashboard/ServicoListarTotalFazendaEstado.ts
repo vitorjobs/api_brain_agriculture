@@ -1,8 +1,5 @@
-import { table } from "console"
-import { response } from "express"
-import { Column, getCustomRepository } from "typeorm"
-import { Endereco } from "../../models/Enderecos"
-import { RepositorioFazenda } from "../../repositories/RepositorioFazenda"
+import { getCustomRepository } from "typeorm"
+import { RepositorioFazenda } from "../../../repositories/RepositorioFazenda"
 
 interface IFazendaRequest {
   endereco_id: string,

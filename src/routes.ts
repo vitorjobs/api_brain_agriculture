@@ -18,10 +18,10 @@ import {ControladorAtualizarCultura} from "./controllers/Cultura/ControladorAtua
 import {ControladorDeletarCultura} from "./controllers/Cultura/ControladorDeletarCultura"
 
 import {ControladorCriarFazenda} from "./controllers/Fazenda/ControladorCriarFazenda"
-import {ControladorListarFazenda} from "./controllers/Fazenda/ControladorListarFazenda"
-import {ControladorListarTotalFazenda} from "./controllers/Fazenda/ControladorListarTotalFazenda"
-import {ControladorListarTotalHectarFazenda} from "./controllers/Fazenda/ControladorListarTotalHectarFazenda"
-import {ControladorListarTotalHectarFazendaEstado} from "./controllers/Fazenda/ControladorListarTotalHectarFazendaEstado"
+import {ControladorListarFazenda} from "./controllers/Fazenda/Dashboard/ControladorListarFazenda"
+import {ControladorListarTotalFazenda} from "./controllers/Fazenda/Dashboard/ControladorListarTotalFazenda"
+import {ControladorListarTotalHectarFazenda} from "./controllers/Fazenda/Dashboard/ControladorListarTotalHectarFazenda"
+import {ControladorListarTotalHectarFazendaEstado} from "./controllers/Fazenda/Dashboard/ControladorListarTotalHectarFazendaEstado"
 
 
 
