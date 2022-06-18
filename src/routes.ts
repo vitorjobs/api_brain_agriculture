@@ -2,8 +2,8 @@ import {autenticacao} from "./middlewares/Autenticacao"
 import {usuarioAdmin} from "./middlewares/ValidacaoUsuarioAdm"
 
 import {Router} from "express"
-import {ControladorCriarUsuario} from "./controllers/ControladorCriarUsuario"
-import {ControladorAutenticarUsuario} from "./controllers/ControladorAutenticarUsuario"
+import {ControladorCriarUsuario} from "./controllers/Usuario/ControladorCriarUsuario"
+import {ControladorAutenticarUsuario} from "./controllers/Usuario/ControladorAutenticarUsuario"
 
 import {ControladorCriarProdutor} from "./controllers/ControladorCriarProdutor"
 import {ControladorListarProdutor} from "./controllers/ControladorListarProdutor"

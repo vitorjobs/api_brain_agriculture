@@ -1,5 +1,5 @@
 import {Request, Response} from "express"
-import { ServicoAutenticarUsuario } from "../services/ServicoAutenticarUsuario"
+import { ServicoAutenticarUsuario } from "../../services/Usuario/ServicoAutenticarUsuario"
 
 class ControladorAutenticarUsuario {
 

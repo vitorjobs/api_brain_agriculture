@@ -1,5 +1,5 @@
 import { getCustomRepository } from "typeorm"
-import { RepositorioUsuario } from "../repositories/RepositorioUsuario"
+import { RepositorioUsuario } from "../../repositories/RepositorioUsuario"
 import {hash} from "bcryptjs"
 
 // INTERFACE COM OS DADOS DA TABELA USUÁRIO
