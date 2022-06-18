@@ -4,6 +4,7 @@ import {usuarioAdmin} from "./middlewares/ValidacaoUsuarioAdm"
 import {Router} from "express"
 import {ControladorCriarUsuario} from "./controllers/Usuario/ControladorCriarUsuario"
 import {ControladorAutenticarUsuario} from "./controllers/Usuario/ControladorAutenticarUsuario"
+import {ControladorListarUsuario} from "./controllers/Usuario/ControladorListarUsuario"
 
 import {ControladorCriarProdutor} from "./controllers/Produtor/ControladorCriarProdutor"
 import {ControladorListarProdutor} from "./controllers/Produtor/ControladorListarProdutor"
@@ -34,6 +35,7 @@ const router = Router()
 /* Controlador - USUÁRIOS */
 const createUserController = new ControladorCriarUsuario()
 const controladorAutenticarUsuario = new ControladorAutenticarUsuario()
+const controladorListarUsuario = new ControladorListarUsuario()
 
 /* Controlador - PRODUTOR */
 const controladorCriarProdutor = new ControladorCriarProdutor()
@@ -67,6 +69,7 @@ const controladorListarVegeTotalHectarFazenda = new ControladorListarVegeTotalHe
 /* MIDDLEWARES = USUÁRIOS */
 router.post("/usuario",        usuarioAdmin, createUserController.handle)
 router.post("/login",          controladorAutenticarUsuario.handle)
+router.get("/usuario",          controladorListarUsuario.handle)
 
 /* Rotas = PRODUTOR */
 router.post("/produtor",       autenticacao, controladorCriarProdutor.handle)
