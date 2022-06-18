@@ -125,14 +125,12 @@ Após confirmados dados, é gerado o token para utilização nos demais `EndPoin
 
 * Listar Rotas dos Gŕaficos
 
-![POST - Login com geração de TOKEN](../api/.github/img/LoginToken.gif "POST - Login com geração de TOKEN")
-
-
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+![POST - Login com geração de TOKEN](../api/.github/img/RotasGraficos.gif "POST - Login com geração de TOKEN")
 
 <p align="center">“Avalie com Carinho :). Eu Tentei rsrs</blockquote>
 
 <p align="center">“Só deseje as coisas as quais você está disposto a lutar”!</blockquote>
+
 Copyright :copyright: 2022 
 
 [⬆ Voltar ao topo]
