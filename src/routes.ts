@@ -20,8 +20,8 @@ import {ControladorDeletarCultura} from "./controllers/Cultura/ControladorDeleta
 import {ControladorCriarFazenda} from "./controllers/Fazenda/ControladorCriarFazenda"
 import {ControladorListarFazenda} from "./controllers/Fazenda/ControladorListarFazenda"
 import {ControladorListarTotalFazenda} from "./controllers/Fazenda/ControladorListarTotalFazenda"
-
 import {ControladorListarTotalHectarFazenda} from "./controllers/Fazenda/ControladorListarTotalHectarFazenda"
+import {ControladorListarTotalHectarFazendaEstado} from "./controllers/Fazenda/ControladorListarTotalHectarFazendaEstado"
 
 
 
@@ -58,7 +58,7 @@ const controladorCriarFazenda = new ControladorCriarFazenda()
 const controladorListarFazenda = new ControladorListarFazenda()
 const controladorListarTotalFazenda = new ControladorListarTotalFazenda()
 const controladorListarTotalHectarFazenda = new ControladorListarTotalHectarFazenda()
-
+const controladorListarTotalHectarFazendaEstado = new ControladorListarTotalHectarFazendaEstado()
 
 
 /* Rotas = USUÁRIOS */
@@ -91,6 +91,7 @@ router.post("/fazenda",    autenticacao, controladorCriarFazenda.handle)
 router.get("/fazenda",    autenticacao, controladorListarFazenda.handle)
 router.get("/totalfazenda",    autenticacao, controladorListarTotalFazenda.handle)
 router.get("/totalHectarFazenda",    autenticacao, controladorListarTotalHectarFazenda.handle)
+router.get("/totalHectarFazendaEstado",    autenticacao, controladorListarTotalHectarFazendaEstado.handle)
 
 
 export {router}
