@@ -22,7 +22,7 @@ class ServicoAtualizarProdutor {
       const produtor = await repositorioProdutor.findOne(id)
   
       if(!produtor){
-        return new Error("Produtor não encontrado")
+        throw new Error("Produtor não encontrado")
       }
   
       produtor.nome = nome ? nome: produtor.nome

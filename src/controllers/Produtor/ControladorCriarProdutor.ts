@@ -5,24 +5,12 @@ class ControladorCriarProdutor {
 
   async handle(request: Request, response: Response){
     const {nome, cpf_cnpj} = request.body
-    
-    try {
-
-      const servicoCriarProdutor = new ServicoCriarProdutor()
-
-      const produtor = await servicoCriarProdutor.execute({nome, cpf_cnpj})
   
-      return response.json({
-        "Produtor Criado com Sucesso ": {
-          nome,
-          cpf_cnpj
-        }
-      }).status(200)
+    const servicoCriarProdutor = new ServicoCriarProdutor()
 
-    } catch (error) {
-        return response.status(400).json(error) 
-    }
+    const produtor = await servicoCriarProdutor.execute({nome, cpf_cnpj})
 
+    return response.json(produtor).status(200)
   }
 }
 

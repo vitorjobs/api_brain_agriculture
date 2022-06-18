@@ -13,9 +13,9 @@ class ServicoCriarProdutor {
 		// Inicializa o repositório
 		const repositorioProdutor = getCustomRepository(RepositorioProdutor)
 
-		try {
+	
       // VALIDA SE EXISTE NOM e CPF_CNPJ preenchido
-      if(!nome || !nome || !cpf_cnpj){
+      if(!nome || !cpf_cnpj){
         throw new Error("Campos obrigatórios não preenchidos")
       }
 
@@ -39,9 +39,9 @@ class ServicoCriarProdutor {
 
       return produtor
 			
-		} catch (error) {
-			  return error
-		}
+		// } catch (error) {
+		// 	  return error
+		// }
 	}
 }
 

@@ -3,12 +3,10 @@ import { RepositorioProdutor } from "../../repositories/RepositorioProdutor"
 
 class ServicoDeletarProdutor {
 	async execute(id: string) {
-	
-    try {
-      const repositorioProdutor = getCustomRepository(RepositorioProdutor)
+    const repositorioProdutor = getCustomRepository(RepositorioProdutor)
 
-      const produtor = await repositorioProdutor.findOne(id)
-    
+    try {
+        
       if(!(await repositorioProdutor.findOne(id))){
         return new Error("Produtor não encontrato na base de dados")
       }
