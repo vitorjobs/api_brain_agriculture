@@ -5,7 +5,6 @@ class ControladorAtualizarCultura {
 
   async handle(request: Request, response: Response){
     
-    try {
 
       const {id} = request.params
       const {nome } = request.body
@@ -22,10 +21,6 @@ class ControladorAtualizarCultura {
         mensagem: "Cultura Alterada Com Sucesso",
         cultura
       }).status(200)
-      
-    } catch (error) {
-      return response.status(400).json(error)
-    }
   }
 }
 

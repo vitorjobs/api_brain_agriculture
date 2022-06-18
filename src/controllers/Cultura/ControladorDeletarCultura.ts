@@ -7,7 +7,6 @@ class ControladorDeletarCultura {
     
     const {id} = request.params
     
-    try {
       const servicoDeletarCultura = new ServicoDeletarCultura()
 
       const cultura = await servicoDeletarCultura.execute(id)
@@ -20,12 +19,7 @@ class ControladorDeletarCultura {
         mensagem: "Cultura Excluído Com Sucesso",
         cultura
       }).send(200)
-      
-    } catch (error) {
-      return response.status(400).json(error) 
-    }
   }
-  
 }
 
 export {ControladorDeletarCultura}
