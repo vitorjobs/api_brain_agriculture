@@ -3,17 +3,12 @@ import { RepositorioCultura } from "../../repositories/RepositorioCultura"
 
 class ServicoListarCultura {
 	async execute(){
-    
-		try {
 
-      const repositorioCultura = getCustomRepository(RepositorioCultura)
-      const cultura = await repositorioCultura.find()
-      
-      return cultura
-			
-		} catch (error) {
-			  return error
-		}
+	const repositorioCultura = getCustomRepository(RepositorioCultura)
+	const cultura = await repositorioCultura.find()
+	
+	return cultura
+
 	}
 }
 

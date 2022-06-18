@@ -7,17 +7,13 @@ class ServicoDeletarCultura {
 	
   const rcepositorioCultura = getCustomRepository(RepositorioCultura)
   
-    try {
-      if(!(await rcepositorioCultura.findOne(id))){
-        // return response.status(100).json("CULTURA NÃO ENCONTRADA NA BASE DE DADOS")
-        return new Error("VERIFIQUE SE A CULTURA A SER EXECLUÍDA EXISTE E TENTE NOVAMENTE")
-      }
-      
-      await rcepositorioCultura.delete(id)
-      
-    } catch (error) {
-        return error
+    
+    if(!(await rcepositorioCultura.findOne(id))){
+      // return response.status(100).json("CULTURA NÃO ENCONTRADA NA BASE DE DADOS")
+      return new Error("VERIFIQUE SE A CULTURA A SER EXECLUÍDA EXISTE E TENTE NOVAMENTE")
     }
+    
+    await rcepositorioCultura.delete(id)
 
   }
 }

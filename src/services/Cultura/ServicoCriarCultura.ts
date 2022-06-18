@@ -9,24 +9,28 @@ interface ICulturaRequest {
 class ServicoCriarCultura {
 	async execute({nome}: ICulturaRequest){
 
-		try {
+		
+    const repositorioCultura = getCustomRepository(RepositorioCultura)
 
-      const repositorioCultura = getCustomRepository(RepositorioCultura)
+    if(!nome){
+      throw new Error("CAMPO OBRIGATÓRIO NÃO PREENCHIDO")
+    }
 
-      if(!nome){
-        throw new Error("CAMPO OBRIGATÓRIO NÃO PREENCHIDO")
-      }
+    const verificarNomeCultura = await repositorioCultura.findOne({
+			nome
+		})
 
-      const cultura = repositorioCultura.create({
-        nome
-      })
-      await repositorioCultura.save(cultura)
-
-      return cultura
-			
-		} catch (error) {
-			  return error
+		if(verificarNomeCultura) {
+			 throw new Error("Cultura já Existe")
 		}
+
+    const cultura = repositorioCultura.create({
+      nome
+    })
+    await repositorioCultura.save(cultura)
+
+    return cultura
+			
 	}
 }
 

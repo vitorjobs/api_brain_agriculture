@@ -8,30 +8,25 @@ interface IProdutorRequest {
 
 class ServicoAtualizarCultura {
 	async execute({id, nome}: IProdutorRequest){
-	
-    try {
-      
-      const repositorioCultura = getCustomRepository(RepositorioCultura)
 
-      if(!nome){
-        throw new Error("CAMPOS OBRIGATÓRIOS NÃO PREENCHIDOS")
-      }
-  
-      const cultura = await repositorioCultura.findOne(id)
-      
-      if(!cultura){
-        return new Error("CULTURA NÃO ENCONTRADA")
-      }
-  
-      cultura.nome = nome ? nome: cultura.nome
-      
-      await repositorioCultura.save(cultura)
-  
-      return cultura
+    const repositorioCultura = getCustomRepository(RepositorioCultura)
 
-    } catch (error) {
-        return error
+    if(!nome){
+      throw new Error("CAMPOS OBRIGATÓRIOS NÃO PREENCHIDOS")
     }
+
+    const cultura = await repositorioCultura.findOne(id)
+    
+    if(!cultura){
+      throw new Error("CULTURA NÃO ENCONTRADA")
+    }
+
+    cultura.nome = nome ? nome: cultura.nome
+    
+    await repositorioCultura.save(cultura)
+
+    return cultura
+
   }
 }
 
