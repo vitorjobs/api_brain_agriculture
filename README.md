@@ -71,7 +71,7 @@ O Nucleo de pensamento para a criação desta API, está em torno da realizaçã
      
  7. Para o Cadastro de `Fazendas`, é necessário que préviamente sejam cadastrados `Produtores, Culturas, Endereços`. 
  8. No momento do cadastro de `FAZENDAS`, é necessário apenas que sejam passados os ids de `Produtores, Culturas, Endereços` (já pensando em como o frontend pode consumir e atribuír os valores no momento do cadastro de novas `FAZENDAS`).
- 9.  para as operações de consultas aos `ENDPoints dos Gráficos`, à nível de complexidade, `apenas os usuários com perfil administrador pode acessar os endpoints do item 8`, sendo necessário está autenticado e validado.
+ 9.  para as operações de consultas aos `EndPoints dos Gráficos`, à nível de complexidade, `apenas os usuários com perfil administrador podem acessar os endpoints do item 8`, sendo necessário estar autenticado e validado.
  
 ## 🚧 Arquitetura Utilizada no Projeto
 ### 📝 **Bando de dados e ORM TypeORM**
